@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # Created by Kang wahid
 if [[ -e /etc/debian_version ]]; then
@@ -23,65 +24,62 @@ echo "--------------- Selamat Datang Di Vps Anda Boss ---------------"
 	swap=$( free -m | awk 'NR==4 {print $2}' )
 	up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
 
+	clear
+	echo "--------------- Selamat datang Admin Di IP: $myip ---------------"
+	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
+	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
+	freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
+	tram=$( free -m | awk 'NR==2 {print $2}' )
+	swap=$( free -m | awk 'NR==4 {print $2}' )
+	up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
+
 	echo -e "\e[032;1mCPU model:\e[0m $cname"
 	echo -e "\e[032;1mNumber of cores:\e[0m $cores"
 	echo -e "\e[032;1mCPU frequency:\e[0m $freq MHz"
 	echo -e "\e[032;1mTotal amount of ram:\e[0m $tram MB"
 	echo -e "\e[032;1mTotal amount of swap:\e[0m $swap MB"
 	echo -e "\e[032;1mSystem uptime:\e[0m $up"
-	echo -e "------------------------------------------------------------------------------"
-	echo -e "Seputar SSH & OpenVPN"
-	echo -e "${color1}1${color3}.  Buat akun SSH & OpenVPN (${color2}user-add${color3})"
-	echo -e "${color1}2${color3}.  Generate akun SSH/OpenVPN (${color2}user-generate${color3})"
-	echo -e "${color1}3${color3}.  Buat account trial untuk SSH & OpenVPN (${color2}trial${color3})"
-	echo -e "${color1}4${color3}.  Tambah masa aktif akun SSH & OpenVPN (${color2}user-aktif${color3})"
-	echo -e "${color1}5${color3}.  Ganti password akun SSH/OpenVPN (${color2}user-password${color3})"
-	echo -e "${color1}6${color3}.  Bannned user yang melakukan multilogin (${color2}user-ban${color3})"
-	echo -e "${color1}7${color3}.  Unbanned user SSH & OpenVPN yang terbanned (${color2}user-unban${color3})"
-	echo -e "${color1}8${color3}.  Mengunci user SSH & OpenVPN (${color2}user-lock${color3})"
-	echo -e "${color1}9${color3}.  Membuka user SSH & OpenVPN yang terkunci (${color2}user-unlock${color3})"
-	echo -e "${color1}10${color3}. Hapus Akun SSH & OpenVPN (${color2}user-delete${color3})"
-	echo -e "${color1}11${color3}. Lihat detail user SSH & OpenVPN (${color2}user-detail${color3})"
-	echo -e "${color1}12${color3}. Tampilkan daftar user SSH & OpenVPN (${color2}user-list${color3})"
-	echo -e "${color1}13${color3}. Cek login Dropbear, OpenSSH, dan OpenVPN (${color2}user-login${color3})"
-	echo -e "${color1}14${color3}. Lihat log login Dropbear & OpenSSH (${color2}user-log${color3})"
-	echo -e "${color1}15${color3}. Kill Multi Login (${color2}user-limit${color3})"
-	echo -e "${color1}16${color3}. Tampilkan user yang akan expired dalam waktu dekat(${color2}infouser${color3})"
-	echo -e "${color1}17${color3}. Tampilkan user yang telah expired (${color2}expireduser${color3})"
-	echo -e "${color1}18${color3}. Hapus user SSH & OpenVPN yang telah expired (${color2}user-delete-expired${color3})"
-	echo -e "${color1}19${color3}. Kunci user SSH & OpenVPN yang telah expired (${color2}user-expire${color3})"
-	echo -e "${color1}20${color3}. Lihat daftar user yang terkick (${color2}log-limit${color3})"
-	echo -e "${color1}21${color3}. Lihat daftar user yang terbanned (${color2}log-ban${color3})"
-	echo -e "${color1}22${color3}. Buat akun PPTP VPN (${color2}user-add-pptp${color3})"
-	echo -e "${color1}23${color3}. Hapus akun PPTP VPN (${color2}user-delete-pptp${color3})"
-	echo -e "${color1}24${color3}. Lihat detail akun PPTP VPN (${color2}user-detail-pptp${color3})"
-	echo -e "${color1}25${color3}. Cek login PPTP VPN (${color2}user-login-pptp${color3})"
-	echo -e "${color1}26${color3}. Lihat daftar user PPTP VPN (${color2}alluser-pptp${color3})"
-	echo -e "${color1}27${color3}. Speedtest server (${color2}speedtest --share${color3})"
-	echo -e "${color1}28${color3}. Benchmark server (${color2}bench-network${color3})"
-	echo -e "${color1}29${color3}. Lihat penggunaan RAM server (${color2}ram${color3})"
-if [[ "$OS" = 'debian' ]]; then 
-	echo -e "${color1}30${color3}. Restart OpenSSH (${color2}service ssh restart${color3})"
-	echo -e "${color1}31${color3}. Restart Dropbear (${color2}service dropbear restart${color3})"
-	echo -e "${color1}32${color3}. Restart OpenVPN (${color2}service openvpn restart${color3})"
-	echo -e "${color1}33${color3}. Restart PPTP VPN (${color2}service pptpd restart${color3})"
-	echo -e "${color1}34${color3}. Restart Webmin (${color2}service webmin restart${color3})"
-	echo -e "${color1}35${color3}. Restart Squid Proxy (${color2}service squid3 restart${color3})"
-else
-	echo -e "${color1}30${color3}. Restart OpenSSH (${color2}service sshd restart${color3})"
-	echo -e "${color1}31${color3}. Restart Dropbear (${color2}service dropbear restart${color3})"
-	echo -e "${color1}32${color3}. Restart OpenVPN (${color2}service openvpn restart${color3})"
-	echo -e "${color1}33${color3}. Restart PPTP VPN (${color2}service pptpd restart${color3})"
-	echo -e "${color1}34${color3}. Restart Webmin (${color2}service webmin restart${color3})"
-	echo -e "${color1}35${color3}. Restart Squid Proxy (${color2}service squid restart${color3})"
-fi
-echo -e "${color1}36${color3}. Edit Port Server (${color2}edit-port${color3})"
-echo -e "${color1}37${color3}. Set auto reboot pada server (${color2}auto-reboot${color3})"
-echo -e "${color1}38${color3}. Reboot server(${color2}reboot${color3})"
-echo -e "${color1}39${color3}. Ganti Password Server(${color2}passwd${color3})"
-echo -e "${color1}40${color3}. Lihat log instalasi (${color2}log-install${color3})"
-echo -e "${color1}41${color3}. Update now"
-echo "-------------------------------------------"
+	echo -e "\e[032;1mScript by:\e[0m Rasta-Team.net | http://rasta-team.net/"
+	echo "------------------------------------------------------------------------------"
+	echo " SSH & OpenVPN"
+	echo -e "\e[031;1m 1\e[0m) \e[30;48;5;82mBuat Akun SSH/OpenVPN[0m"
+	echo -e "\e[031;1m 2\e[0m) \e[30;48;5;82mGenerate Akun SSH/OpenVPN[0m"
+	echo -e "\e[031;1m 3\e[0m) \e[30;48;5;82mGenerate Akun Trial[0m"
+	echo -e "\e[031;1m 4\e[0m) \e[30;48;5;82mGanti Password Akun SSH/VPN[0m"
+	echo -e "\e[031;1m 5\e[0m) \e[30;48;5;82mTambah Masa Aktif Akun SSH/OpenVPN[0m"
+	echo -e "\e[031;1m 6\e[0m) \e[30;48;5;82mHapus Akun SSH/OpenVPN [0m"
+	echo -e "\e[031;1m 7\e[0m) \e[30;48;5;82mCek Login Dropbear & OpenSSH [0m"
+	echo -e "\e[031;1m 8\e[0m) \e[30;48;5;82mAuto Limit Multi Login[0m"
+	echo -e "\e[031;1m 9\e[0m) \e[30;48;5;82mMelihat detail user SSH & OpenVPN[0m"
+	echo -e "\e[031;1m10\e[0m) \e[30;48;5;82mDaftar Akun dan Expire Date[0m[0m"
+	echo -e "\e[031;1m11\e[0m) \e[30;48;5;82mDelete Akun Expire[0m"
+	echo -e "\e[031;1m12\e[0m) \e[30;48;5;82mKill Multi Login[0m"
+	echo -e "\e[031;1m13\e[0m) \e[30;48;5;82mAuto Banned Akun[0m"
+	echo -e "\e[031;1m14\e[0m) \e[30;48;5;82mUnbanned Akun [0m"
+	echo -e "\e[031;1m15\e[0m) \e[30;48;5;82mMengunci Akun SSH & OpenVPN"
+	echo -e "\e[031;1m16\e[0m) \e[30;48;5;82mMembuka user SSH & OpenVPN yang terkunci[0m"
+	echo -e "\e[031;1m17\e[0m) \e[30;48;5;82mMelihat daftar user yang terkick oleh perintah user-limit[0m"
+	echo -e "\e[031;1m18\e[0m) \e[30;48;5;82mMelihat daftar user yang terbanned oleh perintah user-ban[0m"
+	echo -e "\e[031;1m19\e[0m) \e[30;48;5;82mBuat Akun PPTP VPN [0m"
+	echo -e "\e[031;1m20\e[0m) \e[30;48;5;82mHapus Akun PPTP VPN [0m"
+	echo -e "\e[031;1m21\e[0m) \e[30;48;5;82mLihat Detail Akun PPTP VPN[0m"
+	echo -e "\e[031;1m22\e[0m) \e[30;48;5;82mCek login PPTP VPN [0m"
+	echo -e "\e[031;1m23\e[0m) \e[30;48;5;82mLihat Daftar User PPTP VPN[0m"
+	echo -e "\e[031;1m24\e[0m) \e[30;48;5;82mSet Auto Reboot[0m"
+	echo -e "\e[031;1m25\e[0m) \e[30;48;5;82mSpeedtest [0m"
+	echo -e "\e[031;1m26\e[0m) \e[30;48;5;82mMemory Usage[0m"
+	echo -e "\e[031;1m27\e[0m) \e[30;48;5;82mChange OpenVPN Port [0m"
+	echo -e "\e[031;1m28\e[0m) \e[30;48;5;82mChange Dropbear Port[0m"
+	echo -e "\e[031;1m29\e[0m) \e[30;48;5;82mChange Squid Port[0m"
+	echo -e "\e[031;1m30\e[0m) \e[30;48;5;82mRestart OpenVPN [0m"
+	echo -e "\e[031;1m31\e[0m) \e[30;48;5;82mRestart Dropbear[0m"
+	echo -e "\e[031;1m32\e[0m) \e[30;48;5;82mRestart Squid[0m"
+	echo -e "\e[031;1m33\e[0m) \e[30;48;5;82mRestart Webmin [0m"
+	echo -e "\e[031;1m34\e[0m) \e[30;48;5;82mBenchmark[0m[0m"
+	echo -e "\e[031;1m35\e[0m) \e[30;48;5;82mUbah Pasword VPS[0m"
+	echo -e "\e[031;1m36\e[0m) \e[30;48;5;82mUbah Hostname VPS[0m"
+	echo -e "\e[031;1m37\e[0m) \e[30;48;5;82meRboot Server[0m"
+	echo "-------------------------------------------"
 read -p "Tulis Pilihan Anda (angka): " x
 if test $x -eq 1; then
 user-add
@@ -181,7 +179,7 @@ passwd
 elif test $x -eq 40; then
 log-install
 elif test $x -eq 41; then
-wget http://autoscriptnobita.tk/install-premiumscript.sh -O - -o /dev/null|sh
+wget https://raw.githubusercontent.com/ehomecore/menu/master/premium-script.sh -O - -o /dev/null|sh
 else
 echo "Pilihan Tidak Terdapat Di Menu."
 exit
