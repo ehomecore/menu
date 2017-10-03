@@ -1,180 +1,180 @@
 #!/bin/bash
 # User Status
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/user-list
+wget https://raw.githubusercontent.com/ehomecore/menu/master/user-list
 mv ./user-list /usr/local/bin/user-list
 chmod +x /usr/local/bin/user-list
 
 # instal Buat Akun SSH/OpenVPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/buatakun
+wget https://raw.githubusercontent.com/ehomecore/menu/master/buatakun
 mv ./buatakun /usr/bin/buatakun
 chmod +x /usr/bin/buatakun
 
 # instal Generate Akun SSH/OpenVPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/generate
+wget https://raw.githubusercontent.com/ehomecore/menu/master/generate
 mv ./generate /usr/bin/generate
 chmod +x /usr/bin/generate
 
 # instal Generate Akun Trial
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/trial
+wget https://raw.githubusercontent.com/ehomecore/menu/master/trial
 mv ./trial /usr/bin/trial
 chmod +x /usr/bin/trial
 
 # instal  Ganti Password Akun SSH/VPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userpass
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userpass
 mv ./userpass /usr/bin/userpass
 chmod +x /usr/bin/userpass
 
 # instal Generate Akun SSH/OpenVPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userrenew
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userrenew
 mv ./userrenew /usr/bin/userrenew
 chmod +x /usr/bin/userrenew
 
 # instal Hapus Akun SSH/OpenVPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userdelete
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userdelete
 mv ./userdelete /usr/bin/userdelete
 chmod +x /usr/bin/userdelete
 
 # instal Cek Login Dropbear & OpenSSH
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userlogin
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userlogin
 mv ./userlogin /usr/bin/userlogin
 chmod +x /usr/bin/userlogin
 
 # instal Cek Login Dropbear, OpenSSH & OpenVPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/masteruserlogin
+wget https://raw.githubusercontent.com/ehomecore/menu/master/masteruserlogin
 mv ./userlogin /usr/bin/userlogin
 chmod +x /usr/bin/userlogin
 
 # instal Auto Limit Multi Login
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/autolimit
+wget https://raw.githubusercontent.com/ehomecore/menu/master/autolimit
 mv ./autolimit /usr/bin/autolimit
 chmod +x /usr/bin/autolimit
 
 # instal Auto Limit Script Multi Login
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/auto-limit-script
+wget https://raw.githubusercontent.com/ehomecore/menu/master/auto-limit-script
 mv ./auto-limit-script /usr/bin/auto-limit-script
 chmod +x /usr/bin/auto-limit-script
 
 # instal Melihat detail user SSH & OpenVPN 
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userdetail
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userdetail
 mv ./userdetail /usr/bin/userdetail
 chmod +x /usr/bin/userdetail
 
 # instal Delete Akun Expire
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/masterdeleteuserexpire
+wget https://raw.githubusercontent.com/ehomecore/menu/master/deleteuserexpire
 mv ./deleteuserexpire /usr/bin/deleteuserexpire
 chmod +x /usr/bin/deleteuserexpire
 
 # instal  Kill Multi Login
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/autokilluser
+wget https://raw.githubusercontent.com/ehomecore/menu/master/autokilluser
 mv ./autokilluser /usr/bin/autokilluser
 chmod +x /usr/bin/autokilluser
 
 # instal Auto Banned Akun
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userban
+wget https://raw.githubusercontent.com/ehomecore/menu/master/master/userban
 mv ./userban /usr/bin/userban
 chmod +x /usr/bin/userban
 
 # instal Unbanned Akun
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userunban
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userunban
 mv ./userunban /usr/bin/userunban
 chmod +x /usr/bin/userunban
 
 # instal Mengunci Akun SSH & OpenVPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userlock
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userlock
 mv ./userlock /usr/bin/userlock
 chmod +x /usr/bin/userlock
 
 # instal Membuka user SSH & OpenVPN yang terkunci
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userunlock
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userunlock
 mv ./userunlock /usr/bin/userunlock
 chmod +x /usr/bin/userunlock
 
 # instal Melihat daftar user yang terkick oleh perintah user-limit
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/loglimit
+wget https://raw.githubusercontent.com/ehomecore/menu/master/loglimit
 mv ./loglimit /usr/bin/loglimit
 chmod +x /usr/bin/loglimit
 
 # instal Melihat daftar user yang terbanned oleh perintah user-ban
 cd
-wget http://autoscriptnobita.tk/configdual7m/logban
+wget https://raw.githubusercontent.com/ehomecore/menu/master/logban
 mv ./logban /usr/bin/logban
 chmod +x /usr/bin/logban
 
 # instal Buat Akun PPTP VPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/useraddpptp
+wget https://raw.githubusercontent.com/ehomecore/menu/master/useraddpptp
 mv ./useraddpptp /usr/bin/useraddpptp
 chmod +x /usr/bin/useraddpptp
 
 # instal Hapus Akun PPTP VPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userdeletepptp
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userdeletepptp
 mv ./userdeletepptp /usr/bin/userdeletepptp
 chmod +x /usr/bin/userdeletepptp
 
 # instal Lihat Detail Akun PPTP VPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/detailpptp
+wget https://raw.githubusercontent.com/ehomecore/menu/master/detailpptp
 mv ./detailpptp /usr/bin/detailpptp
 chmod +x /usr/bin/detailpptp
 
 # instal Cek login PPTP VPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/userloginpptp
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userloginpptp
 mv ./userloginpptp /usr/bin/userloginpptp
 chmod +x /usr/bin/userloginpptp
 
 # instal Lihat Daftar User PPTP VPN
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/alluserpptp
+wget https://raw.githubusercontent.com/ehomecore/menu/master/alluserpptp
 mv ./alluserpptp /usr/bin/alluserpptp
 chmod +x /usr/bin/alluserpptp
 
 # instal Set Auto Reboot
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/autoreboot
+wget https://raw.githubusercontent.com/ehomecore/menu/master/autoreboot
 mv ./autoreboot /usr/bin/autoreboot
 chmod +x /usr/bin/autoreboot
 
 # Install SPEED tES
 apt-get install python
-wget https://raw.githubusercontent.com/samreysteven/install/masterspeedtest.py
+wget https://raw.githubusercontent.com/ehomecore/menu/master/master/speedtest.py
 chmod +x speedtest.py
 
 # instal autolimitscript
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/auto-limit-script
+wget https://raw.githubusercontent.com/ehomecore/menu/master/auto-limit-script
 mv ./auto-limit-script /usr/bin/auto-limit-script
 chmod +x /usr/bin/auto-limit-script
 
 # instal userdelete
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/masteruserdelete
+wget https://raw.githubusercontent.com/ehomecore/menu/master/userdelete
 mv ./userdelete /usr/bin/userdelete
 chmod +x /usr/bin/userdelete
 
 # Install Menu
 cd
-wget https://raw.githubusercontent.com/samreysteven/install/master/menu
+wget https://raw.githubusercontent.com/ehomecore/menu/master/menu
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
